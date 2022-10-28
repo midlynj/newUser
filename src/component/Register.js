@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -11,6 +11,10 @@ const Register = () => {
     const [email, setEmail]  = useState("");
     const [password, setPassword] = useState("")
     // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
+
+    useEffect(() => {
+
+    }, [username]);
 
     function newUser(event) {
         event.preventDefault()
