@@ -1,6 +1,7 @@
 import {Link, Route} from "react-router-dom";
 import Logout from "../component/Logout";
 import {useEffect, useState} from "react";
+import "./navbar.css"
 
 const Navigation = () => {
 
