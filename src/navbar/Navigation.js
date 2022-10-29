@@ -19,7 +19,8 @@ const Navigation = () => {
 
                     )
 
-: (                 <>
+                    : (
+                        <>
                             <Link to="/logout">logout</Link>
                     </>
                 )}
