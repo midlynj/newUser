@@ -1,8 +1,10 @@
 import {useState} from "react";
 import axios from "axios";
 import "./login.css"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
@@ -22,6 +24,7 @@ const Login = () => {
                     localStorage.setItem("authenticated", username);
                     console.log("match")
                     console.log(localStorage)
+                    navigate("/")
                 } else {
                     console.log("no match")
                 }
@@ -63,24 +66,6 @@ const Login = () => {
                     <input type="submit" value="Submit" className="login-button"/>
                 </form>
             </div>
-            {/*<p>Welcome Back</p>*/}
-            {/*<form onSubmit={handleSubmit}>*/}
-                {/*<input*/}
-                {/*    type="text"*/}
-                {/*    name="Username"*/}
-                {/*    placeholder="username"*/}
-
-                {/*    onChange={(e) => setUsername(e.target.value)}*/}
-                {/*/>*/}
-                {/*<input*/}
-                {/*    type="password"*/}
-                {/*    name="Password"*/}
-                {/*    placeholder="password"*/}
-
-                {/*    onChange={(e) => setPassword(e.target.value)}*/}
-                {/*/>*/}
-                {/*<input type="submit" value="Submit" className="login-button"/>*/}
-            {/*</form>*/}
         </div>
 
 
