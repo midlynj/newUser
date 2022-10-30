@@ -10,7 +10,6 @@ const Register = () => {
     const [username, setUserName]  = useState("");
     const [email, setEmail]  = useState("");
     const [password, setPassword] = useState("")
-    // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
     useEffect(() => {
 
@@ -25,20 +24,22 @@ const Register = () => {
             email,
             password
         }
-        const url = "http://localhost:8000/users"
+        const url = "http://localhost:8000/usersdvgd"
 
         axios.post(url, user)
             .then(response => {
-                console.log(response.data)
-            } )
-        // setAuthenticated(username)
-        localStorage.setItem("authenticated",username)
-
+                if (response.status === 201 ) {
+                    console.log(response.data)
+                    console.log(response.status)
+                    localStorage.setItem("authenticated",username)
+                    return navigate("/")
+                }
+            } ).catch((error) => {
+            console.log(error)
+            console.log("could not complete registration")
+        })
 
         console.log(localStorage)
-
-        return navigate("/")
-
 
     }
 
