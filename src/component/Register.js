@@ -24,11 +24,12 @@ const Register = () => {
             email,
             password
         }
-        const url = "http://localhost:8000/usersdvgd"
+        // const url = "http://localhost:8081/api/users"
+        const url = "http://localhost:8000/users"
 
         axios.post(url, user)
             .then(response => {
-                if (response.status === 201 ) {
+                if (response.status === 201 || response.status === 200) {
                     console.log(response.data)
                     console.log(response.status)
                     localStorage.setItem("authenticated",username)
@@ -42,8 +43,6 @@ const Register = () => {
         console.log(localStorage)
 
     }
-
-
 
     return (
         <div className="register">
