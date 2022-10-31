@@ -27,8 +27,8 @@ public class UserController {
     @CrossOrigin
     @PostMapping("")
     public User addUser(@RequestBody User newUser) {
-       m.add(newUser);
-       return newUser;
+        m.add(newUser);
+        return newUser;
 
     }
 }
