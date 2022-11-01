@@ -24,6 +24,6 @@ yarn-error.log*
 /Backend/main/resources/application.properties
 /src/component/Child.js
 /src/component/Parent.js
-/src/component/Product.js
+/src/component/Products.js
 /src/component/User.js
 /target/classes/application.properties
