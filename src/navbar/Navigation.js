@@ -11,6 +11,11 @@ const Navigation = () => {
         <nav className= "navbar">
             <div  className= "links">
                 <Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                {/*<Link to="/parent">parent</Link>&nbsp;&nbsp;&nbsp;&nbsp;*/}
+                <Link to="/store">Store</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/cart">Cart</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                {/*<Link to="/user">user</Link>&nbsp;&nbsp;&nbsp;&nbsp;*/}
 
                 {!checkIfLogin ? (
                     <>
