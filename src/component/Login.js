@@ -27,6 +27,8 @@ const Login = () => {
                     navigate("/")
                 } else {
                     console.log("no match")
+                    let notValid = document.getElementById("invalid")
+                    notValid.innerText = "Username or Password is incorrect"
                 }
             })
     }
@@ -37,6 +39,9 @@ const Login = () => {
         <div className="login">
 
             <div className="login-box">
+                <p id="invalid" style={{
+                    color: "white"
+                }}></p>
                 <h2>Welcome back</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="user-box">
