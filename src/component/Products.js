@@ -13,8 +13,6 @@ export default class Products extends Component {
 
     }
 
-
-
     componentDidMount() {
         axios.get("http://localhost:8000/Products")
             .then((response) => {
