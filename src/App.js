@@ -6,10 +6,13 @@ import Register from "./component/Register";
 import Home from "./component/Home";
 import Login from "./component/Login";
 import Logout from "./component/Logout";
-import {useState} from "react";
+import Error from "./component/Error";
+import Products from "./component/Products";
+import Cart from "./component/Cart";
+
 
 function App() {
-    const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
+    // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
 
     return (
@@ -29,6 +32,15 @@ function App() {
                         <Route path="/login" element={<Login/>}/>
 
                         <Route path="/logout" element={<Logout/>}/>
+                        {/*<Route path="/parent" element={<Parent/>}/>*/}
+                        <Route path="/store" element={<Products/>}/>
+
+                        <Route path="/cart" element={<Cart/>}/>
+
+
+
+
+                        <Route path="*" element={<Error/>}/>
 
 
 
