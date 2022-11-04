@@ -8,9 +8,15 @@ const Navigation = () => {
     let checkIfLogin = localStorage.getItem("authenticated")
 
     return (
-        <nav className= "navbar">
+        <nav className= "navbar navbar-default navbar-fixed-top navbar-shrink" style={{
+            padding:"15px"
+        }}>
             <div  className= "links">
-                <Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                <Link to="/" style={{
+                    float:"left"
+                }}>StacksNation</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                {/*<Link to="/">Home</Link>&nbsp;&nbsp;&nbsp;&nbsp;*/}
                 {/*<Link to="/parent">parent</Link>&nbsp;&nbsp;&nbsp;&nbsp;*/}
                 <Link to="/store">Store</Link>&nbsp;&nbsp;&nbsp;&nbsp;
                 <Link to="/cart">Cart</Link>&nbsp;&nbsp;&nbsp;&nbsp;
