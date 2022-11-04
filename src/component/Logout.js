@@ -1,5 +1,6 @@
 const Logout = () => {
     localStorage.clear()
+    window.open("http://localhost:3000","_self")
 
     return (
         <div>
