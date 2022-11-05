@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Container, Col, Row, Table} from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
-
 import {BsCartCheck, BsCartX} from 'react-icons/bs';
+import axios from "axios";
+import GuestCheckout from "./GuestCheckout";
 
 
 
 const Cart = () => {
 
+    const userId = localStorage.getItem("id")
+    let isLoggedIn = localStorage.getItem("authenticated")
 
 
     const {
@@ -18,9 +21,39 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
+    const url = `http://localhost:8000/users/${userId}`
+
+    const checkout  = {
+        items,
+        cartTotal
+    }
+
+    console.log(items)
+
+    function userBoughtItems () {
+
+        const getUsername = localStorage.getItem("authenticated")
+        const checkForValidCredentials = axios.get("http://localhost:8000/users")
+            .then(response => {
+                const account = response.data.find((user) => (user.username === getUsername));
+                if (account) {
+                    console.log("match")
+
+                        console.log(account.items)
+
+                        axios.patch(url, checkout)
+                            .then((res) => {
+                                console.log(res.status)
+                            })
+                }
+            })
+            }
+
     return (
         <Container className="py-4 mt-5">
-            <h1 className="my-5 text-center">
+            <h1 className="my-5 text-center"  style={{
+                color: "rgb(2, 23, 108)"
+            }}>
                 {isEmpty? 'Your Cart is Empty' : 'Current Items'}
             </h1>
             <Row className="justify-content-center">
@@ -54,7 +87,8 @@ const Cart = () => {
                     })}
                     </tbody>
                 </Table>
-                {!isEmpty &&
+                {!isEmpty && isLoggedIn &&
+
                     <Row
                         style={{ position: 'fixed', bottom: 50}}
                         className=" justify-content-center w-100"
@@ -75,7 +109,7 @@ const Cart = () => {
 
                              <Button variant="success"
                                      className="m-2"
-                             // onClick={meep}
+                             onClick={userBoughtItems}
                              >
                                  <BsCartCheck size="1.7rem" />
                                  Pay
@@ -84,6 +118,16 @@ const Cart = () => {
                         </Col>
                     </Row>}
             </Row>
+
+            {!isLoggedIn && !isEmpty && (
+              <div>
+
+                 <GuestCheckout/>
+                  <h4>Total Price: $ {cartTotal}</h4>
+
+              </div>
+            )}
+
         </Container>
     );
 }
