@@ -1,19 +1,14 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import "./login.css"
 
 
 
 const Register = () => {
-    const navigate = useNavigate();
 
     const [username, setUserName]  = useState("");
     const [email, setEmail]  = useState("");
     const [password, setPassword] = useState("")
-
-    useEffect(() => {
-
-    }, [username]);
 
     function newUser(event) {
         event.preventDefault()
@@ -29,11 +24,11 @@ const Register = () => {
 
         axios.post(url, user)
             .then(response => {
-                if (response.status === 201 || response.status === 200) {
+                if (response.status === 201 ) {
                     console.log(response.data)
                     console.log(response.status)
                     localStorage.setItem("authenticated",username)
-                    return navigate("/")
+                    window.open("http://localhost:3000","_self")
                 }
             } ).catch((error) => {
             console.log(error)
@@ -45,15 +40,30 @@ const Register = () => {
     }
 
     return (
-        <div className="register">
+        <div className="login">
+            <div className="login-box">
+                <h2>Join Us</h2>
+                <form onSubmit={newUser}>
+                <div className="user-box">
+                    <input className="username" type="text" required onChange={(event) => setUserName(event.target.value)}/>
+                    <label>Enter a Username</label>
+                </div>
 
-            <form onSubmit={newUser}>
-                <input className="username" type="text" placeholder="enter username" required onChange={(event) => setUserName(event.target.value)}/>
-                <input type="email" className="email" placeholder="enter email" required  onChange={(event) => setEmail(event.target.value)}/>
-                <input type="password" className="password" placeholder="enter password" required  minLength="3" onChange={(event) => setPassword(event.target.value)}/>
-                <button id="submit" className="submit" role="link"> Register</button>
+               <div className="user-box">
+                    <input type="email" className="email" required  onChange={(event) => setEmail(event.target.value)}/>
+                    <label>Enter an Email</label>
+               </div>
+
+               <div className="user-box">
+                    <input type="password" className="password"  required  minLength="3" onChange={(event) => setPassword(event.target.value)}/>
+                    <label>Enter a Password</label>
+               </div>
+
+               <button id="submit" className="login-button" role="link"> Register</button>
+
             </form>
         </div>
+    </div>
     )
 
 }
