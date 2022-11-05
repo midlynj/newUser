@@ -1,11 +1,9 @@
-import {Link, Route} from "react-router-dom";
-import Logout from "../component/Logout";
-import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import "./navbar.css"
 
 const Navigation = () => {
 
-    let checkIfLogin = localStorage.getItem("authenticated")
+    let isLoggedIn = localStorage.getItem("authenticated")
 
     return (
         <nav className= "navbar navbar-default navbar-fixed-top navbar-shrink" style={{
@@ -23,7 +21,7 @@ const Navigation = () => {
 
                 {/*<Link to="/user">user</Link>&nbsp;&nbsp;&nbsp;&nbsp;*/}
 
-                {!checkIfLogin ? (
+                {!isLoggedIn ? (
                     <>
                         <Link to="/register">Register</Link>&nbsp;&nbsp;&nbsp;&nbsp;
                         <Link to="/login">Login</Link>&nbsp;&nbsp;&nbsp;&nbsp;

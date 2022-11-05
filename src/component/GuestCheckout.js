@@ -85,8 +85,10 @@ const  GuestCheckout = () => {
                                 <label>Enter Address</label>
                             </div>
 
-                            <button id="submit" className="login-button" role="link"> Pay</button>
-                            <button  className="login-button" onClick={cancelGuestPayment}> Cancel</button>
+                            <button id="submit" className="login-button" role="link">Pay ${cartTotal}</button>
+                            <button  className="login-button" onClick={cancelGuestPayment} style={{
+                                float:"right"
+                            }}> Cancel</button>
 
                         </form>
                             </div>
