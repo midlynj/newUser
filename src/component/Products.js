@@ -14,7 +14,7 @@ export default class Products extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:8000/Products")
+        axios.get("http://localhost:8001/Products")
             .then((response) => {
 
                 let product = []
