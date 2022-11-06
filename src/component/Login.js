@@ -1,13 +1,12 @@
 import {useState} from "react";
 import axios from "axios";
 import "./login.css"
-import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
-    const navigate = useNavigate();
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
 
 
@@ -18,13 +17,16 @@ const Login = () => {
             .then(response => {
                 console.log(response.data)
 
-                const account = response.data.find((user) => (user.username === username));
+                const account = response.data.find((user) => (user.username === username))
+
                 if (account && account.password === password) {
-                    setAuthenticated(true)
+                    console.log(account)
                     localStorage.setItem("authenticated", username);
                     console.log("match")
+                    localStorage.setItem("id",account.id)
+
                     console.log(localStorage)
-                    navigate("/")
+                    window.open("http://localhost:3000","_self")
                 } else {
                     console.log("no match")
                     let notValid = document.getElementById("invalid")
@@ -68,8 +70,9 @@ const Login = () => {
                         <label>Password</label>
 
                     </div>
-                    <input type="submit" value="Submit" className="login-button"/>
+                    <input type="submit" value="Log In" className="login-button"/>
                 </form>
+
             </div>
         </div>
 

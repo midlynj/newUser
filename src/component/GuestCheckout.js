@@ -16,6 +16,7 @@ const  GuestCheckout = () => {
         updateItemQuantity,
         removeItem,
         emptyCart,
+        totalItems
     } = useCart();
 
         function guestCheckout(event) {
@@ -28,6 +29,7 @@ const  GuestCheckout = () => {
                 email,
                 address,
                 items,
+                totalItems,
                 cartTotal
             }
 

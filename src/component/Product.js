@@ -2,6 +2,7 @@ import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
+import "./beep.css"
 
 const Product = (props) => {
 
@@ -14,7 +15,9 @@ const Product = (props) => {
     }
 
     return (
-        <div>
+        <div className="store" style={{
+            margin: "20px"
+        }}>
             {/*<h1>{props.product.name}</h1>*/}
             {/*<h1>${props.product.price}</h1>*/}
             {/*<h1>{<img src={props.product.image} alt=""/>}</h1>*/}
