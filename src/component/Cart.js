@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Button, Container, Col, Row, Table} from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
 import {BsCartCheck, BsCartX} from 'react-icons/bs';
@@ -20,12 +20,14 @@ const Cart = () => {
         updateItemQuantity,
         removeItem,
         emptyCart,
+        totalItems
     } = useCart();
     const url = `http://localhost:8000/users/${userId}`
 
     const checkout  = {
         items,
-        cartTotal
+        totalItems,
+        cartTotal,
     }
 
     console.log(items)
