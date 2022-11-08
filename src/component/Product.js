@@ -14,8 +14,10 @@ const Product = (props) => {
         addItem(props.product);
     }
 
+
+
     return (
-        <div className="store" style={{
+        <div className="card" style={{
             margin: "20px"
         }}>
             {/*<h1>{props.product.name}</h1>*/}
@@ -26,8 +28,9 @@ const Product = (props) => {
                 style={{
                     width: '18rem',
                     height: 'auto',
-                    borderRadius: "50px",
-                    background: "#e0e0e0"
+                    borderRadius: "20px",
+                    background: "#e0e0e0",
+                    border: "1px solid #000000c5"
                     // box-shadow:  32px 32px 65px #bebebe,
                     // -32px -32px 65px #ffffff;
                 }}
@@ -35,7 +38,7 @@ const Product = (props) => {
             >
                 <div style={{ background: 'white', height: '15rem', overflow: 'hidden', display: 'flex',
                     justifyContent: 'center', alignItems: 'center', marginBottom: 'inherit' }}>
-                    <div style={{ width: '9rem'}}>
+                    <div style={{ width: '20rem'}}>
                         <Card.Img variant="top" src={image} className="img-fluid" />
                     </div>
                 </div>
