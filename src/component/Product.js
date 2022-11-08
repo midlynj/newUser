@@ -2,7 +2,7 @@ import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
-import "./beep.css"
+import "./products.css"
 
 const Product = (props) => {
 

@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#app{
+    background-color: #eee;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*align-items: space-evenly;*/
+    justify-content: center;
+    padding:3rem 0 0 20px;
+}
+.card {
+    /*background-color: gray;*/
+    margin: 10px;
+    display: inline-block;
+    border-radius: 10px 10px 0 0;
+    /*border: 1px solid #000000c5;*/
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 0 0 10px 0;
+    width: 100%;
+    max-width: 300px;
+}
