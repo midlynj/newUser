@@ -2,12 +2,23 @@ import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 import axios from "axios";
 import {useCart} from "react-use-cart";
+import {useNavigate} from "react-router-dom";
 
 const  GuestCheckout = () => {
+
     const [open, setOpen] = useState(false)
     const [name, setName]  = useState("");
     const [email, setEmail]  = useState("");
     const [address, setAddress] = useState("")
+
+    const timeOfPurchase = Date()
+
+    const navigate = useNavigate();
+
+    const confirmation  = () => {
+        navigate("/thankyouforyourpurchase")
+    }
+
 
     const {
         isEmpty,
@@ -30,7 +41,8 @@ const  GuestCheckout = () => {
                 address,
                 items,
                 totalItems,
-                cartTotal
+                cartTotal,
+                timeOfPurchase
             }
 
             axios.post(url,guest)
@@ -38,8 +50,8 @@ const  GuestCheckout = () => {
                     if (response.status === 201 ) {
                         console.log(response.data)
                         console.log(response.status)
-                        emptyCart()
-                        alert("Payment Successful")
+                        confirmation()
+
                     }
                 } ).catch((error) => {
                 console.log(error)

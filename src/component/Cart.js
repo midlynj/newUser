@@ -4,14 +4,22 @@ import { useCart } from 'react-use-cart';
 import {BsCartCheck, BsCartX} from 'react-icons/bs';
 import axios from "axios";
 import GuestCheckout from "./GuestCheckout";
+import {useNavigate} from "react-router-dom";
 
 
 
 const Cart = () => {
 
+    const navigate = useNavigate();
+
+    const confirmation = () => {
+        navigate("/thankyouforyourpurchase")
+    }
+
+
     const userId = localStorage.getItem("id")
     let isLoggedIn = localStorage.getItem("authenticated")
-
+    const timeOfPurchase = Date()
 
     const {
         isEmpty,
@@ -28,6 +36,7 @@ const Cart = () => {
         items,
         totalItems,
         cartTotal,
+        timeOfPurchase
     }
 
     console.log(items)
@@ -46,6 +55,7 @@ const Cart = () => {
                         axios.patch(url, checkout)
                             .then((res) => {
                                 console.log(res.status)
+                                confirmation()
                             })
                 }
             })

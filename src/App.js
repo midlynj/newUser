@@ -1,4 +1,3 @@
-
 import './App.css';
 import Navigation from "./navbar/Navigation";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -9,6 +8,7 @@ import Logout from "./component/Logout";
 import Error from "./component/Error";
 import Products from "./component/Products";
 import Cart from "./component/Cart";
+import ThankYou from "./component/ThankYou";
 
 
 function App() {
@@ -34,6 +34,9 @@ function App() {
                         <Route path="/logout" element={<Logout/>}/>
                         {/*<Route path="/parent" element={<Parent/>}/>*/}
                         <Route path="/store" element={<Products/>}/>
+
+                        <Route path="/thankyouforyourpurchase" element={<ThankYou/>}/>
+
 
                         <Route path="/cart" element={<Cart/>}/>
 
