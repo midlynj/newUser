@@ -34,15 +34,15 @@ const ThankYou = () => {
     //     navigate("/")
     // }
     // setTimeout(returnToHome,5000)
-    let randomConfirmationNumber = ""
+    let confirmationNumber = ""
     function confirmationNumberGenerator(length) {
 
         let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let charactersLength = characters.length;
         for ( let i = 0; i < length; i++ ) {
-            randomConfirmationNumber += characters.charAt(Math.floor(Math.random() * charactersLength));
+            confirmationNumber += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
-        console.log(randomConfirmationNumber)
+        console.log(confirmationNumber)
 
     } confirmationNumberGenerator(15)
 
@@ -64,7 +64,7 @@ const ThankYou = () => {
                 margin:"10px"
             }}>Items below are currently being processed</h3>
 
-            <h2>Your confirmation number is {randomConfirmationNumber}</h2>
+            <h2>Your confirmation number is {confirmationNumber}</h2>
 
             {items.map((item) => (
                 <div className="thankyou" key={item.id} >
