@@ -9,6 +9,7 @@ import Error from "./component/Error";
 import Products from "./component/Products";
 import Cart from "./component/Cart";
 import ThankYou from "./component/ThankYou";
+import MyStore from "./component/MyStore";
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
                         <Route path="/store" element={<Products/>}/>
 
                         <Route path="/thankyouforyourpurchase" element={<ThankYou/>}/>
+
+                        <Route path="/myStore" element={<MyStore/>}/>
+
 
 
                         <Route path="/cart" element={<Cart/>}/>

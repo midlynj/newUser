@@ -31,8 +31,10 @@ const Navigation = () => {
 
                     : (
                         <>
-                            <Link to="/logout">logout</Link>
-                    </>
+                            <Link to="/logout">logout</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <Link to="/myStore">myStore</Link>
+
+                        </>
                 )}
 
             </div>
