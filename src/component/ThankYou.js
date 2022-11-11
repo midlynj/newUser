@@ -35,6 +35,7 @@ const ThankYou = () => {
     // }
     // setTimeout(returnToHome,5000)
     let confirmationNumber = ""
+
     function confirmationNumberGenerator(length) {
 
         let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -48,54 +49,18 @@ const ThankYou = () => {
 
 
     return (
-        <div>
+        <div className="confirmation">
             <h1 style={{
-                margin:"10px",
-                color:"dodgerblue"
-            }}>Thank you for your purchase!</h1>
+
+                color:"#033b42"
+            }}>Thank you for your purchase! Your order is on it's way</h1>
             <CircularProgress style={{
                 margin: "20px"
             }} />
 
-
-
-
-            <h3 style={{
-                margin:"10px"
-            }}>Items below are currently being processed</h3>
-
-            <h2>Your confirmation number is {confirmationNumber}</h2>
-
-            {items.map((item) => (
-                <div className="thankyou" key={item.id} >
-
-                    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                        <ListItem alignItems="flex-start">
-                            <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src={item.image} style={{
-                                    width:"100%",
-                                    height:"10vh"
-                                }} />
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary={item.name}
-                                secondary={
-                                    <React.Fragment>
-                                     <p>
-                                        <LoremIpsum/>
-                                     </p>
-
-                                    </React.Fragment>
-                                }
-                            />
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-
-                    </List>
-
-                </div>
-            ))}
-
+            <h2 style={{
+                marginBottom:"50px"
+            }}>Your confirmation number is {confirmationNumber}</h2>
 
         </div>
     )

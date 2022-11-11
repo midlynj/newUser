@@ -7,3 +7,39 @@
 p {
     text-align: justify;
 }
+
+/*.confirmation{*/
+/*    font-size: 62.5%;*/
+/*}*/
+.confirmation {
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/2b/de/7d/2bde7d14133968f97d6c4dd898edb989.gif');
+    background-position: bottom left;
+    animation: driving 10s linear infinite;
+    position: relative;
+}
+
+@keyframes driving {
+    from {
+        background-position: bottom left;
+    }
+
+    to {
+        background-position: bottom right;
+    }
+}
+
+/* Rain effect */
+/*.rain {*/
+/*    background: url(./img/rain.png);*/
+/*    animation: rain 5s linear infinite;*/
+/*}*/
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 20% 100%;
+    }
+}
