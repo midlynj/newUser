@@ -53,11 +53,13 @@ const ThankYou = () => {
             <h1 style={{
 
                 color:"#033b42"
-            }}>Thank you for your purchase! Your order is on it's way</h1>
+            }}>Thank you for your purchase!</h1>
             <CircularProgress style={{
                 margin: "20px"
             }} />
-
+            <h2 style={{
+                margin:"20px"
+            }}>Your order is on it's way</h2>
             <h2 style={{
                 marginBottom:"50px"
             }}>Your confirmation number is {confirmationNumber}</h2>
