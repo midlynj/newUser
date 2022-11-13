@@ -26,3 +26,6 @@ yarn-error.log*
 /src/component/Parent.js
 /src/component/User.js
 /target/classes/application.properties
+/Backend/main/java/stacks/data/AlterEgo.java
+/Backend/main/java/stacks/data/CanFly.java
+/Backend/main/java/stacks/data/Superhero.java
