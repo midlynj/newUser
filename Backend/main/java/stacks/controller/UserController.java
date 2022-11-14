@@ -31,4 +31,37 @@ public class UserController {
         return newUser;
 
     }
+    @GetMapping("/{id}")
+    public User fetchUserById(@PathVariable long id) {
+        // search through the list of posts
+        // and return the post that matches the given id
+
+        User user = findUserById(id);
+        if (user == null) {
+            throw new RuntimeException("Not sure what you're asking for");
+        }
+        return user;
+    }
+
+    private User findUserById(long id) {
+        for (User user : m) {
+            if (user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUserById(@PathVariable long id) {
+        // search through the list of posts
+        // and delete the post that matches the given id
+        User user = findUserById(id);
+        if (user != null) {
+            m.remove(user);
+            return;
+        }
+        throw new RuntimeException("User not found");
+    }
+
 }
