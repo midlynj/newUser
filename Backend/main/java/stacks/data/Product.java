@@ -9,11 +9,11 @@ import lombok.*;
 @ToString
 
 public class Product {
+
     private long id;
     private String name;
     private long quantity;
     private long price;
     private String category;
     private String image;
-
 }
