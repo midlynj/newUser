@@ -31,9 +31,8 @@ const Navigation = () => {
 
                     : (
                         <>
-                            <Link to="/logout">logout</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Link to="/myStore">myStore</Link>
-
+                            <Link to="/myStore">Profile</Link>
+                            <Link to="/logout" style={{float:"right"}}>logout</Link>&nbsp;&nbsp;&nbsp;&nbsp;
                         </>
                 )}
 

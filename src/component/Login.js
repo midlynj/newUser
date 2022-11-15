@@ -24,6 +24,9 @@ const Login = () => {
                     localStorage.setItem("authenticated", username);
                     console.log("match")
                     localStorage.setItem("id",account.id)
+                    localStorage.setItem("address",account.address)
+                    localStorage.setItem("password",account.password)
+                    localStorage.setItem("email",account.email)
 
                     console.log(localStorage)
                     window.open("http://localhost:3000","_self")
