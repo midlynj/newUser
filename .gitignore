@@ -29,3 +29,7 @@ yarn-error.log*
 /Backend/main/java/stacks/data/AlterEgo.java
 /Backend/main/java/stacks/data/CanFly.java
 /Backend/main/java/stacks/data/Superhero.java
+/target/classes/stacks/data/Superhero.class
+/target/classes/stacks/data/CanFly.class
+/target/classes/stacks/data/AlterEgo.class
+/src/private/StripeKey.js
