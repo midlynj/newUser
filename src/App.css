@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.StripeElement {
+  /*margin: 15px auto;*/
+  padding: 10px 12px;
+  color: #32325d;
+  background-color: #040a2d;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: block;
+
+  width: 900px;
+  margin-left: 70px;
+  text-align: center;
+
+
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
