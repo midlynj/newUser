@@ -57,7 +57,7 @@ const Product = (props) => {
                     </Card.Title>
                     <Button
                         onClick={()=> addToCart()}
-                        // className={`${theme? 'bg-dark-primary text-black':'bg-light-primary' } d-flex align-item-center m-auto border-0`}
+                        // className={`${theme? 'bg-dark-primary text-black':'bg-light-primary' } d-flex align-item-center meep-auto border-0`}
                     >
                         <BsCartPlus size="1.8rem" />
                         Add to cart

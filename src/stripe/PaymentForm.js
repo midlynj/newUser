@@ -10,6 +10,10 @@ const PaymentForm = () => {
 
     const navigate = useNavigate()
 
+    const userId = localStorage.getItem("id")
+    let isLoggedIn = localStorage.getItem("authenticated")
+    const timeOfPurchase = Date()
+
 
     function meep() {
         // window.open("http://localhost:3000/newitems", "_self")
@@ -58,23 +62,26 @@ const PaymentForm = () => {
                 type: "card",
                 card: elements.getElement(CardElement)
 
-
             })
 
         if (!error) {
             try {
                 const {id} = paymentMethod
-                const response = await axios.post("http://localhost:8080/api/payment/create-payment-intent",{
+                const response = await axios.post("http://localhost:8000/users",{
 
-                    id
+                    paymentId:id,
+                    items,
+                    customer: isLoggedIn,
+                    timeOfPurchase,
+                    paymentTotal:"$" +cartTotal
                 })
                 console.log(response)
                 console.log(response.data)
 
-                if (response.status === 200) {
+                if (response.status === 201) {
                     console.log("Successful payment")
                     setSuccess(true)
-                    emptyCart()
+                    // emptyCart()
                     meep()
                     alert("Payment Successful, thank you shop again!!!")
                 }
@@ -92,23 +99,27 @@ const PaymentForm = () => {
 
             {!success ?
             <form onSubmit={submitPayment}>
-                <fieldset className="formGroup">
-                    <div className="formRow">
+                {/*<fieldset className="formGroup">*/}
+                    {/*<div className="formRow">*/}
                         <CardElement options={CARD_OPTIONS}/>
 
-                    </div>
+                    {/*</div>*/}
 
-                </fieldset>
+                {/*</fieldset>*/}
                 <button style={{
 
                     backgroundColor: "lightgreen",
-                    color: "whitesmoke",
+                    color: "black",
                     display: "block",
                     marginLeft: "auto",
                     marginRight: "auto",
-                    width: "25%"
+                    width: "25%",
+                    marginTop:"10px",
+                    padding:"10px",
+                    fontWeight:"bolder",
+                    fontSize:"larger"
 
-                }}>  <BsCartCheck size="1.7rem" />Pay</button>
+                }}>  Pay${cartTotal}</button>
 
             </form>
                 :
