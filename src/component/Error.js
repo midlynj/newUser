@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import {useEffect} from "react";
 import {motion} from "framer-motion";
+import "./error.css"
 
 
 const Error = () => {
@@ -11,22 +11,24 @@ const Error = () => {
     const returnToHome  = () => {
         navigate("/")
     }
-    setTimeout(returnToHome,3000)
+    // setTimeout(returnToHome,3000)
 
     return (
 
-        <motion.div
-            animate={{
-                    // x: 0,
-                    // backgroundColor: "red",
-                   boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.2)",
-                    // position: "fixed",
-                textAlign:"center",
+        <motion.div style={{
+    fontSize:"xxx-large"
 
-                margin: "60px"
-                }}>
-           Something went wrong
-        </motion.div>
+}} whileHover={{
+    scale: 3.1,
+    textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+    boxShadow: "0px 0px 8px rgb(255, 255, 255)"
+}}>
+
+    <div className="error">404</div>
+    <br/><br/>
+    <span className="info">Page Not Found</span>
+
+</motion.div>
     )
 }
 export default Error
