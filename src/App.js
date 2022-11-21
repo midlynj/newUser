@@ -9,7 +9,9 @@ import Error from "./component/Error";
 import Products from "./component/Products";
 import Cart from "./component/Cart";
 import ThankYou from "./component/ThankYou";
-import MyStore from "./component/MyStore";
+import NewHome from "./component/NewHome";
+import Profile from "./component/Profile";
+
 
 
 function App() {
@@ -38,7 +40,13 @@ function App() {
 
                         <Route path="/thankyouforyourpurchase" element={<ThankYou/>}/>
 
-                        <Route path="/myStore" element={<MyStore/>}/>
+                        <Route path="/myProfile" element={<Profile/>}/>
+
+                        <Route path="/newhome" element={<NewHome/>}/>
+
+
+
+
 
 
 

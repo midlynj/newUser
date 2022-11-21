@@ -5,7 +5,8 @@ import {BsCartCheck, BsCartX} from 'react-icons/bs';
 import axios from "axios";
 import GuestCheckout from "./GuestCheckout";
 import {useNavigate} from "react-router-dom";
-
+import StripeContainer from "../stripe/StripeContainer";
+import {motion} from "framer-motion";
 
 
 const Cart = () => {
@@ -64,7 +65,11 @@ const Cart = () => {
     return (
         <Container className="py-4 mt-5">
             <h1 className="my-5 text-center"  style={{
-                color: "rgb(2, 23, 108)"
+                color: "rgb(220,220,232)",
+                position:"absolute",
+                left: "37%",
+                width: "400px"
+
             }}>
                 {isEmpty? 'Your Cart is Empty' : 'Current Items'}
             </h1>
@@ -87,8 +92,12 @@ const Cart = () => {
                                         {item.title}
                                     </h6>
                                 </td>
-                                <td>$ {item.price}</td>
-                                <td>Quantity ({item.quantity})</td>
+                                <td style={{
+                                    color:"whitesmoke"
+                                }}>$ {item.price}</td>
+                                <td style={{
+                                    color:"whitesmoke"
+                                }}>Quantity ({item.quantity})</td>
                                 <td>
                                     <Button onClick={()=> updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
                                     <Button onClick={()=> updateItemQuantity(item.id, item.quantity + 1)} className="ms-2">+</Button>
@@ -105,27 +114,47 @@ const Cart = () => {
                         style={{ position: 'fixed', bottom: 50}}
                         className=" justify-content-center w-100"
                     >
-                        {/*<StripeContainer/>*/}
-                        {/* <StripeChexkout/> */}
+                        <StripeContainer/>
+                        {/* <StripeCheckout/> */}
                         <Col className="k">
-                            <h4>Total Price: $ {cartTotal}</h4>
+                            {/*<h4>Total Price: $ {cartTotal}</h4>*/}
                         </Col>
                         <Col className="p-0" md={4}>
-                            <Button variant="danger"
+                            <motion.button variant="danger"
                                     className="m-2"
                                     onClick={()=> emptyCart()}
-                            >
-                                <BsCartX size="1.7rem" />
-                                Clear Cart
-                            </Button>
+                                           whileHover={{
+                                               scale: 1.1,
+                                               textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+                                               boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                                               borderRadius: "20%"
+                                           }}
+                                           style={{
 
-                             <Button variant="success"
-                                     className="m-2"
-                             onClick={userBoughtItems}
-                             >
-                                 <BsCartCheck size="1.7rem" />
-                                 Pay
-                             </Button>
+                                               backgroundColor: "red",
+                                               color: "black",
+                                               display: "block",
+                                               marginLeft: "142mm",
+                                               // marginRight: "auto",
+                                               width: "25%",
+                                               marginTop:"10px",
+                                               padding:"10px",
+                                               fontWeight:"bolder",
+                                               fontSize:"larger"
+
+                                           }}
+                            >
+                                <BsCartX size="1.3rem" />
+                                Clear Cart
+                            </motion.button>
+
+                             {/*<Button variant="success"*/}
+                             {/*        className="m-2"*/}
+                             {/*onClick={userBoughtItems}*/}
+                             {/*>*/}
+                             {/*    <BsCartCheck size="1.7rem" />*/}
+                             {/*    Pay*/}
+                             {/*</Button>*/}
 
                         </Col>
                     </Row>}
