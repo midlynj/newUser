@@ -9,6 +9,8 @@ const Register = () => {
     const [username, setUserName]  = useState("");
     const [email, setEmail]  = useState("");
     const [password, setPassword] = useState("")
+    const [address, setAddress] = useState("")
+
 
     function newUser(event) {
         event.preventDefault()
@@ -17,7 +19,8 @@ const Register = () => {
         const user  = {
             username,
             email,
-            password
+            password,
+            address
         }
         // const url = "http://localhost:8081/api/users"
         const url = "http://localhost:8000/users"
@@ -58,6 +61,11 @@ const Register = () => {
                     <input type="password" className="password"  required  minLength="3" onChange={(event) => setPassword(event.target.value)}/>
                     <label>Enter a Password</label>
                </div>
+
+                    <div className="user-box">
+                        <input type="text" className="password"  required  minLength="5" onChange={(event) => setAddress(event.target.value)}/>
+                        <label>Enter Address</label>
+                    </div>
 
                <button id="submit" className="login-button" role="link"> Register</button>
 
