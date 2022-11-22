@@ -4,10 +4,21 @@ import {useState} from "react";
 import UserGreeting from "./UserGreeting";
 import "../profile.css"
 import {Link} from "react-router-dom";
+import {useCart} from "react-use-cart";
+import "./meep.css"
 
 
 const MyProfile = () => {
 
+    const {
+        isEmpty,
+        items,
+        cartTotal,
+        updateItemQuantity,
+        removeItem,
+        emptyCart,
+        totalItems
+    } = useCart();
 
 
     const loggedUser = localStorage.getItem("authenticated")
@@ -51,10 +62,10 @@ const MyProfile = () => {
                     <li>
                         <a className="header-menu-tab" href="#2"><span className="icon fontawesome-user scnd-font-color"></span>Account</a>
                     </li>
-                    <li>
-                        <a className="header-menu-tab" href="#3"><span className="icon fontawesome-envelope scnd-font-color"></span>Messages</a>
-                        <a className="header-menu-number" href="#4">5</a>
-                    </li>
+                    {/*<li>*/}
+                    {/*    <a className="header-menu-tab" href="#3"><span className="icon fontawesome-envelope scnd-font-color"></span>Notifications</a>*/}
+                        {/*<a className="header-menu-number" href="#4">{totalItems}</a>*/}
+                    {/*</li>*/}
                 </ul>
                 <div className="profile-menu">
 
