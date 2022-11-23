@@ -113,7 +113,7 @@ a:hover {
     padding-right: 15px;
 }
 .header-menu-number {
-    position: absolute;
+    /*position: absolute;*/
     line-height: 22px;
     padding: 0 6px;
     font-weight: 700;

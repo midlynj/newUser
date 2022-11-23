@@ -3,6 +3,7 @@ import axios from "axios";
 
 import {Button, Modal} from "react-bootstrap";
 import React from "react";
+import {motion} from "framer-motion";
 
 
 const UpdateInfo = () => {
@@ -50,11 +51,24 @@ const UpdateInfo = () => {
     return (
         <div>
 
-            <Button variant="primary" onClick={update} style={{
-                float:"right"
+            <motion.button variant="primary"   whileHover={{
+                scale: 1.1,
+                textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+                boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                borderRadius: "20%",
+
+            }} onClick={update} style={{
+                // float:"right",
+                marginTop:"75px",
+                marginLeft:"50px",
+                borderRadius:"10%",
+                color:"yellow",
+                backgroundColor:"#7c0707",
+                
+                // marginRight:"-55px"
             }}>
                Update Information
-            </Button>
+            </motion.button>
 
             <Modal show={open} onHide={cancelUpdate}>
 
