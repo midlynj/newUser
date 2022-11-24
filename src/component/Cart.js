@@ -164,7 +164,11 @@ const Cart = () => {
               <div>
 
                  <GuestCheckout/>
-                  <h4>Total Price: $ {cartTotal}</h4>
+                  <h4 style={{
+                      position: "absolute",
+                      left: "37%",
+                      width: "400px"
+                  }}>Total Price: $ {cartTotal}</h4>
 
               </div>
             )}

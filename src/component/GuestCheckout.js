@@ -72,8 +72,15 @@ const  GuestCheckout = () => {
                     className="d-flex align-items-center justify-content-center"
 
                 >
-                    <Button variant="primary" onClick={getGuestInfoForPayment}>
-                        Pay As Guest
+                    <Button variant="primary" onClick={getGuestInfoForPayment} style={{
+                        position: "absolute",
+                        left: "37%",
+                        width: "400px",
+                        marginTop:"50px",
+                        color:"black",
+                        height:"3em"
+                    }}>
+                        Guest Checkout
                     </Button>
                 </div>
                 <Modal show={open} onHide={cancelGuestPayment}>
