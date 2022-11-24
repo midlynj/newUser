@@ -25,8 +25,7 @@ const UpdateInfo = () => {
         let newItem = {
             email,
             password,
-            address
-
+            address,
         }
 
         axios.patch(url, newItem)
@@ -63,7 +62,7 @@ const UpdateInfo = () => {
                 marginLeft:"50px",
                 borderRadius:"10%",
                 color:"yellow",
-                backgroundColor:"#7c0707",
+                backgroundColor:"#7c0707"
                 
                 // marginRight:"-55px"
             }}>
