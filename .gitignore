@@ -33,3 +33,4 @@ yarn-error.log*
 /target/classes/stacks/data/CanFly.class
 /target/classes/stacks/data/AlterEgo.class
 /src/private/StripeKey.js
+/src/private/GooglePrivate.ts
