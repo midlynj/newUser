@@ -19,7 +19,6 @@ const Cart = () => {
 
 
     const userId = localStorage.getItem("id")
-    let isLoggedIn = localStorage.getItem("authenticated")
     const timeOfPurchase = Date()
 
     const {
@@ -68,7 +67,8 @@ const Cart = () => {
                 color: "rgb(220,220,232)",
                 position:"absolute",
                 left: "37%",
-                width: "400px"
+                width: "400px",
+                textShadow: "0px 0px 4px #12a0a0"
 
             }}>
                 {isEmpty? 'Your Cart is Empty' : 'Current Items'}
@@ -93,22 +93,30 @@ const Cart = () => {
                                     </h6>
                                 </td>
                                 <td style={{
-                                    color:"whitesmoke"
+                                    color:"whitesmoke",
+                                    textShadow: "0px 0px 4px #12a0a0"
                                 }}>$ {item.price}</td>
                                 <td style={{
-                                    color:"whitesmoke"
+                                    color:"whitesmoke",
+                                    textShadow: "0px 0px 4px #12a0a0"
                                 }}>Quantity ({item.quantity})</td>
                                 <td>
-                                    <Button onClick={()=> updateItemQuantity(item.id, item.quantity - 1)} className="ms-2">-</Button>
-                                    <Button onClick={()=> updateItemQuantity(item.id, item.quantity + 1)} className="ms-2">+</Button>
-                                    <Button variant="danger" onClick={()=> removeItem(item.id)} className="ms-2">Remove Item</Button>
+                                    <Button onClick={()=> updateItemQuantity(item.id, item.quantity - 1)} className="ms-2" style={{
+                                        textShadow: "0px 0px 4px #12a0a0"
+                                    }}>-</Button>
+                                    <Button onClick={()=> updateItemQuantity(item.id, item.quantity + 1)} className="ms-2" style={{
+                                        textShadow: "0px 0px 4px #12a0a0"
+                                    }}>+</Button>
+                                    <Button variant="danger" onClick={()=> removeItem(item.id)} className="ms-2" style={{
+                                        textShadow: "0px 0px 4px #12a0a0"
+                                    }}>Remove Item</Button>
                                 </td>
                             </tr>
                         )
                     })}
                     </tbody>
                 </Table>
-                {!isEmpty && isLoggedIn &&
+                {!isEmpty &&
 
                     <Row
                         style={{ position: 'fixed', bottom: 50}}
@@ -160,18 +168,34 @@ const Cart = () => {
                     </Row>}
             </Row>
 
-            {!isLoggedIn && !isEmpty && (
-              <div>
+            {/*{!isLoggedIn && !isEmpty && !googleSign && (*/}
+            {/*  <div>*/}
 
-                 <GuestCheckout/>
-                  <h4 style={{
-                      position: "absolute",
-                      left: "37%",
-                      width: "400px"
-                  }}>Total Price: $ {cartTotal}</h4>
+            {/*     <GuestCheckout/>*/}
+            {/*      <h4 style={{*/}
+            {/*          position: "absolute",*/}
+            {/*          left: "37%",*/}
+            {/*          width: "400px",*/}
+            {/*          textShadow: "0px 0px 4px #12a0a0"*/}
+            {/*      }}>Total Price: $ {cartTotal}</h4>*/}
 
-              </div>
-            )}
+            {/*  </div>*/}
+            {/*)}*/}
+
+            {/*{googleSign && !isEmpty && (*/}
+            {/*    <div>*/}
+            {/*        */}
+
+            {/*        <GuestCheckout/>*/}
+            {/*        <h4 style={{*/}
+            {/*            position: "absolute",*/}
+            {/*            left: "37%",*/}
+            {/*            width: "400px",*/}
+            {/*            textShadow: "0px 0px 4px #12a0a0"*/}
+            {/*        }}>Total Price: $ {cartTotal}</h4>*/}
+
+            {/*    </div>*/}
+            {/*)}*/}
 
         </Container>
     );

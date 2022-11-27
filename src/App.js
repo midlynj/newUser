@@ -11,6 +11,9 @@ import Cart from "./component/Cart";
 import ThankYou from "./component/ThankYou";
 import NewHome from "./component/NewHome";
 import Profile from "./component/Profile";
+import GoogleLoginnt from "./component/GoogleLogin";
+import GoogleLogin from "./component/GoogleLogin";
+import Meep from "./component/Meep";
 
 
 
@@ -32,9 +35,9 @@ function App() {
 
                         <Route path="/register" element={<Register/>}/>
 
-                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/login" element={<GoogleLogin/>}/>
 
-                        <Route path="/logout" element={<Logout/>}/>
+                        <Route path="/logout" element={<Meep/>}/>
                         {/*<Route path="/parent" element={<Parent/>}/>*/}
                         <Route path="/store" element={<Products/>}/>
 
