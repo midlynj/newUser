@@ -25,18 +25,7 @@ const Register = () => {
         // const url = "http://localhost:8081/api/users"
         const url = "http://localhost:8000/users"
 
-        axios.post(url, user)
-            .then(response => {
-                if (response.status === 201 ) {
-                    console.log(response.data)
-                    console.log(response.status)
-                    localStorage.setItem("authenticated",username)
-                    window.open("http://localhost:3000","_self")
-                }
-            } ).catch((error) => {
-            console.log(error)
-            console.log("could not complete registration")
-        })
+
 
         console.log(localStorage)
 

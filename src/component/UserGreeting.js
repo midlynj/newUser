@@ -17,7 +17,9 @@ function UserGreeting(props) {
 
         <div>
 
-            <h1>Welcome back!</h1>
+            <h1 style={{
+                textShadow: "0px 0px 4px #12a0a0"
+            }}>Welcome back!</h1>
 
 
             {/*<div className="hello-parent">*/}
