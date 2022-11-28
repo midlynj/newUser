@@ -78,7 +78,8 @@ const  GuestCheckout = () => {
                         width: "400px",
                         marginTop:"50px",
                         color:"black",
-                        height:"3em"
+                        height:"3em",
+                        textShadow: "0px 0px 4px #12a0a0"
                     }}>
                         Guest Checkout
                     </Button>

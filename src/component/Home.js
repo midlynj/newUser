@@ -1,22 +1,10 @@
 import UserGreeting from "./UserGreeting";
 import GuestGreeting from "./GuestGreeting";
+import NewHome from "./NewHome";
 
 const Home = () => {
-localStorage.getItem("authenticated")
-    let checkForLogin = localStorage.getItem("authenticated")
 
-    if (checkForLogin) {
-        return <UserGreeting/>
-    }  return <GuestGreeting/>
-    // return (
-    //
-    //     <div className="home">
-    //         Home screen
-    //
-    //         <p>{"Hello " +m}</p>
-    //     </div>
-    // )
-
+    return <NewHome/>
 }
 
 export default Home
