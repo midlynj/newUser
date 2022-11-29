@@ -1,6 +1,8 @@
 import {useState} from "react";
 import axios from "axios";
 import "./login.css"
+import GoogleLogin from "./GoogleLogin";
+import Meep from "./Meep";
 
 
 const Login = () => {
@@ -42,6 +44,9 @@ const Login = () => {
     return (
 
         <div className="login">
+
+            {/*<GoogleLogin/>*/}
+            {/*<Meep/>*/}
 
             <div className="login-box">
                 <p id="invalid" style={{

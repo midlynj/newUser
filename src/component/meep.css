@@ -22,7 +22,7 @@ body {
     display: flex;
 }
 .profile-row .dp {
-    flex-basis: 33.3%;
+    /*flex-basis: 33.3%;*/
     position: relative;
     margin: 24px;
     align-self: center;
@@ -48,8 +48,8 @@ body {
     border: 6px solid transparent;
     border-top-color: #0AE0DF;
     border-radius: 50%;
-    top: -6px;
-    left: -6px;
+    /*top: -6px;*/
+    /*left: -6px;*/
 
     animation-duration: 2s;
     animation-name: rotate-clock;
@@ -92,7 +92,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     color: #ecfcfb;
     text-shadow: 0px 0px 4px #12a0a0;
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
 }
 .profile-row .desc h1 {
     margin: 0px;
