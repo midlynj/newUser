@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 import {BsCartCheck} from 'react-icons/bs';
 import {useCart} from 'react-use-cart';
 import {useNavigate} from "react-router-dom";
+import {motion} from "framer-motion";
+import GuestCheckout from "../component/GuestCheckout";
 
 
 const PaymentForm = () => {
@@ -11,8 +13,11 @@ const PaymentForm = () => {
     const navigate = useNavigate()
 
     const userId = localStorage.getItem("id")
-    let isLoggedIn = localStorage.getItem("authenticated")
+    // let isLoggedIn = localStorage.getItem("authenticated")
     const timeOfPurchase = Date()
+    const [name, setName]  = useState("");
+    const [email, setEmail]  = useState("");
+    const [address, setAddress] = useState("")
 
 
     function meep() {
@@ -28,6 +33,7 @@ const PaymentForm = () => {
         updateItemQuantity,
         removeItem,
         emptyCart,
+        totalItems
     } = useCart();
 
     const CARD_OPTIONS = {
@@ -71,9 +77,12 @@ const PaymentForm = () => {
 
                     paymentId:id,
                     items,
-                    customer: isLoggedIn,
+                    customer: name,
+                    email,
+                    address,
                     timeOfPurchase,
-                    paymentTotal:"$" +cartTotal
+                    paymentTotal:"$" + cartTotal,
+                    totalItems
                 })
                 console.log(response)
                 console.log(response.data)
@@ -101,25 +110,49 @@ const PaymentForm = () => {
             <form onSubmit={submitPayment}>
                 {/*<fieldset className="formGroup">*/}
                     {/*<div className="formRow">*/}
-                        <CardElement options={CARD_OPTIONS}/>
+                <div className="login">
+                    <div className="login-box">
+                <div className="user-box">
+                    <input className="username" type="text" required onChange={(event) => setName(event.target.value)}/>
+                    <label>Enter Name</label>
+                </div>
+
+                <div className="user-box">
+                    <input type="email" className="email" required  onChange={(event) => setEmail(event.target.value)}/>
+                    <label>Enter Email</label>
+                </div>
+
+                <div className="user-box">
+                    <input type="text" className="password"  required  minLength="3" onChange={(event) => setAddress(event.target.value)}/>
+                    <label>Enter Address</label>
+                </div>
+                <CardElement options={CARD_OPTIONS}/>
 
                     {/*</div>*/}
 
                 {/*</fieldset>*/}
-                <button style={{
+                <motion.button  whileHover={{
+                    scale: 1.1,
+                    textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    borderRadius: "20%"
+                }}
+                                style={{
 
                     backgroundColor: "lightgreen",
                     color: "black",
                     display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    width: "25%",
-                    marginTop:"10px",
+                    // marginLeft: "50",
+                    // marginRight: "auto",
+                    // width: "25%",
+                    marginTop:"13px",
                     padding:"10px",
                     fontWeight:"bolder",
                     fontSize:"larger"
 
-                }}>  Pay${cartTotal}</button>
+                }}>  Pay${cartTotal}</motion.button>
+                    </div>
+                </div>
 
             </form>
                 :
