@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
 import "./products.css"
+import {motion} from "framer-motion";
 
 const Product = (props) => {
 
@@ -53,15 +54,37 @@ const Product = (props) => {
                         </Link>
                     </Card.Title>
                     <Card.Title>
-                        $ <span className="h3">{price}</span>
+                         <span className="h3" style={{
+                            color:"#040a2d"
+                    }}>${price}</span>
                     </Card.Title>
-                    <Button
+                    <motion.button
                         onClick={()=> addToCart()}
-                        // className={`${theme? 'bg-dark-primary text-black':'bg-light-primary' } d-flex align-item-center meep-auto border-0`}
+
+                        whileHover={{
+                            scale: 1.1,
+                            textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+                            boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                            borderRadius: "20%"
+                        }}
+                        style={{
+
+                            backgroundColor: "lightgreen",
+                            color: "black",
+                            display: "block",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            width: "55%",
+
+                            padding:"5px",
+                            fontWeight:"bolder",
+                            borderRadius:"7%"
+                    }}
+
                     >
                         <BsCartPlus size="1.8rem" />
                         Add to cart
-                    </Button>
+                    </motion.button>
                 </Card.Body>
             </Card>
 
