@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500, 600,800&display=swap');
 .newhome {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    /*margin: 0;*/
+    /*height: 100%;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
     align-items: center;
     background: #020b46;
     font-family: 'Montserrat', sans-serif;
