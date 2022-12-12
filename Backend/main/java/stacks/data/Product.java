@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "users")
+@Table(name = "products")
 
 public class Product {
     @Id
@@ -19,8 +19,16 @@ public class Product {
 
     @Column(nullable = false, length = 100, unique = true)
     private String name;
+
+    @Column(nullable = false, length = 100)
     private long quantity;
+
+    @Column(nullable = false, length = 100)
     private long price;
+
+    @Column(nullable = false, length = 100)
     private String category;
+
+    @Column(nullable = false, length = 100)
     private String image;
 }
