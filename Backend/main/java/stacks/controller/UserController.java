@@ -42,4 +42,12 @@ public class UserController {
         userRepository.save(updateUser);
     }
 
+    @CrossOrigin
+    @GetMapping("/{id}")
+    private void getUserById(@PathVariable Long id) {
+        userRepository.findById(id);
+    }
+
+
+
 }
