@@ -28,8 +28,8 @@ public class User {
     @Column(nullable = false, length = 100)
     private String password;
 
-    @OneToMany(mappedBy = "author")
-    @JsonIgnoreProperties("author")
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties("customer")
     private Collection<Product> itemsBought;
 
 }
